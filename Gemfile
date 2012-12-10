@@ -6,11 +6,13 @@ gem 'simple_form'
 
 gem 'omniauth-facebook'
 
-gem 'pg', '0.14.1'
+gem 'pg'
 
 gem 'kaminari'
 
 gem 'devise','2.1.2'
+
+gem 'haml-rails', '0.3.5'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
