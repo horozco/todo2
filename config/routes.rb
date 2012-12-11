@@ -1,12 +1,10 @@
 Todo2::Application.routes.draw do
   
-  get "home/index"
+  devise_for :users
 
   root :to => "home#index"
 
   resources :lists do
       resources :tasks
   end
-  
-
 end
