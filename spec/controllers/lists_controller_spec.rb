@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe ListsController do
 
-  describe "GET 'new'" do
+  context "a unsigned in user" do
+
+  end
+
+  describe "" do
     it "returns http success" do
       get 'new'
       response.should be_success
