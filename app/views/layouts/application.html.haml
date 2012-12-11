@@ -19,10 +19,12 @@
               %li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
     %div.container
       - if notice
-        %div.alert.alert-success      
+        %div.alert.alert-success    
+          %button.close{"data-dismiss" => "alert", :type => "button"} x  
           %p.notice= notice
       - if alert
         %div.alert-error      
+          %button.close{"data-dismiss" => "alert", :type => "button"} x 
           %p= alert
       = yield
     %footer.navbar.navbar-fixed-bottom

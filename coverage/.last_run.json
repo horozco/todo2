@@ -1,5 +1,9 @@
 {
   "result": {
+<<<<<<< HEAD
     "covered_percent": 88.05
+=======
+    "covered_percent": 87.97
+>>>>>>> Added X button to the notice and alert
   }
 }
