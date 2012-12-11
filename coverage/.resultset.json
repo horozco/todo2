@@ -544,7 +544,6 @@
         1,
         1,
         1,
-        1,
         null
       ],
       "/Users/koombea/Documents/dev/todo2/app/controllers/tasks_controller.rb": [
@@ -560,6 +559,10 @@
         null
       ],
       "/Users/koombea/Documents/dev/todo2/app/models/task.rb": [
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         null
@@ -630,6 +633,6 @@
         null
       ]
     },
-    "timestamp": 1355261260
+    "timestamp": 1355263110
   }
 }
