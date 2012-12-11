@@ -9,9 +9,14 @@
     %div.navbar.navbar-fixed-top      
       %div.navbar-inner
         %div.container
-          %a.brand{:href=>"#"}Title
+          %a.brand{:href=>"#"}ToDo Project
           %ul.nav
             %li= link_to 'Home', root_path
+          %ul.nav.pull-right
+            - if user_signed_in?
+              %li= link_to "Log Out", destroy_user_session_path,  method: :delete
+            - else
+              %li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
     %div.container
       - if notice
         %div.alert.alert-success      
@@ -20,3 +25,7 @@
         %div.alert-error      
           %p= alert
       = yield
+    %footer.navbar.navbar-fixed-bottom
+      .navbar-inner
+        .container
+          %a.brand{:href => "http://www.koombea.com"} &copy; Koombea 2012

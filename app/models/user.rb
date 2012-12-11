@@ -3,9 +3,32 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  attr_accessible :email, :remember_me, :full_name, :birth_date
+  attr_accessible :email, :remember_me, :full_name, :birth_date, :provider, :uid, :password
+
+>>>>>>> Created Home Page, Implemented Facebook Authentication
   has_many :lists
-  
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    puts "*"*100
+    p auth
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(full_name:auth.extra.raw_info.name,
+                           provider:auth.provider,
+                           uid:auth.uid,
+                           email:auth.info.email,
+                           password:Devise.friendly_token[0,20],
+                           birth_date:auth.extra.raw_info.birthday
+                            )
+    end
+    user
+  end
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end  
 end
