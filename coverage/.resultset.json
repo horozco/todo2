@@ -136,6 +136,7 @@
         null,
         null,
         null,
+        null,
         1,
         null,
         null,
@@ -145,6 +146,8 @@
         null,
         null,
         null,
+        1,
+        1,
         1,
         null,
         null,
@@ -444,6 +447,28 @@
         null,
         1,
         1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null,
         null
       ],
@@ -567,6 +592,22 @@
         1,
         null
       ],
+      "/Users/koombea/Documents/dev/todo2/app/controllers/users/omniauth_callbacks_controller.rb": [
+        1,
+        1,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
       "/Users/koombea/Documents/dev/todo2/spec/factories.rb": [
         1,
         null,
@@ -633,6 +674,6 @@
         null
       ]
     },
-    "timestamp": 1355263110
+    "timestamp": 1355264122
   }
 }

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   attr_accessible :email, :remember_me, :full_name, :birth_date, :provider, :uid, :password
-
+  validates_presence_of :full_name
   has_many :lists
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     puts "*"*100
