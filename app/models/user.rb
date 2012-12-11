@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
                            email:auth.info.email,
                            password:Devise.friendly_token[0,20],
                            birth_date:auth.extra.raw_info.birthday
-                            )
+                          )
     end
     user
   end
