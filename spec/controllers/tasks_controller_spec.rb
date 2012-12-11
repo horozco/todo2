@@ -27,7 +27,7 @@ describe TasksController do
     response.should redirect_to(list_path(@existing_list))
   end
 
-  it "should allow to update a new task to a given list and store it if valid. Should show the list page with a flash notice message" do
+  it "should allow to update a task to a given list and store it if valid. Should show the list page with a flash notice message" do
     existing_task = create(:task)
     put :update, {
       id: existing_task.id,

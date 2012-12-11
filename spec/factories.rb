@@ -40,7 +40,7 @@ FactoryGirl.define do
 
   factory :category do
     name_category "example name category"
-    reminder
+    task
 
     factory :invalid_category do
       name_category ""
