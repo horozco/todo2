@@ -19,6 +19,7 @@ FactoryGirl.define do
   factory :task do
     name "example name"
     status false
+    list
 
     factory :invalid_task do
       name ""

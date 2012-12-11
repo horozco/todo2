@@ -444,6 +444,8 @@
         null,
         1,
         null,
+        1,
+        null,
         null
       ],
       "/Users/koombea/Documents/dev/todo2/app/controllers/application_controller.rb": [
@@ -522,6 +524,7 @@
       "/Users/koombea/Documents/dev/todo2/app/models/list.rb": [
         1,
         1,
+        1,
         null
       ],
       "/Users/koombea/Documents/dev/todo2/app/controllers/reminders_controller.rb": [
@@ -564,8 +567,8 @@
         1,
         null,
         1,
-        13,
-        13,
+        4,
+        4,
         1,
         null,
         null,
@@ -578,15 +581,40 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
         null,
         null
       ],
       "/Users/koombea/Documents/dev/todo2/spec/support/controller_macros.rb": [
         1,
-        1,
-        8,
-        8,
-        8,
+        0,
+        0,
+        0,
+        0,
         null,
         null
       ],
@@ -596,6 +624,6 @@
         null
       ]
     },
-    "timestamp": 1355248845
+    "timestamp": 1355251876
   }
 }
