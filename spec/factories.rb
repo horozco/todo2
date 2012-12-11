@@ -12,8 +12,32 @@ FactoryGirl.define do
     user
 
     factory :invalid_list do
-        title ""
+      title ""
     end
   end
 
+  factory :task do
+    name "example name"
+    status false
+
+    factory :invalid_task do
+      name ""
+    end
+  end
+
+  factory :reminder do
+    date "11/05/2012"
+    location "any location"
+    repeat false
+    time "16:00"
+
+    factory :invalid_reminder do
+      date ""
+      time ""
+    end
+  end
+
+  factory :category do
+    name_category "example name category"
+  end
 end
