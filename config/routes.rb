@@ -1,4 +1,46 @@
 Todo2::Application.routes.draw do
+  get "categories/create"
+
+  get "categories/edit"
+
+  get "categories/destroy"
+
+  get "reminders/create"
+
+  get "reminders/edit"
+
+  get "reminders/destroy"
+
+  get "tasks/create"
+
+  get "tasks/destroy"
+
+  get "tasks/update"
+
+  get "lists/new"
+
+  get "lists/create"
+
+  get "lists/edit"
+
+  get "lists/update"
+
+  get "lists/destroy"
+
+  get "lists/show"
+
+  get "list/new"
+
+  get "list/create"
+
+  get "list/edit"
+
+  get "list/update"
+
+  get "list/destroy"
+
+  get "list/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
