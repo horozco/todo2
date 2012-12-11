@@ -1,26 +1,29 @@
 require 'spec_helper'
 
 describe RemindersController do
-
-  describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      response.should be_success
-    end
+  before(:all) do
+    @existing_task = create(:task)
   end
 
-  describe "GET 'edit'" do
-    it "returns http success" do
-      get 'edit'
-      response.should be_success
-    end
+  it "should allow to create a new reminder to a given task. Should show the list page with a flash notice message" do
+    expect {
+      post :create, {
+        task_id: @existing_task.id,
+        reminder: attributes_for(:reminder)
+      }
+    }.to change {@existing_task.reminder.count}.by(1)
+    flash[:notice].should_not be_nil
   end
 
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      get 'destroy'
-      response.should be_success
-    end
+  it "shouldn't allow to enter an invalid reminder to a given task. Should show the list page with a flash error message" do
+    expect {
+      post :create, {
+        list_id: @existing_task.id,
+        reminder: attributes_for(:invalid_reminder)
+      }
+    }.to change { @existing_task.reminder.count }.by(0)
+    flash[:alert].should_not be_nil
   end
 
+  
 end

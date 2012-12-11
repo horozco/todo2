@@ -31,14 +31,19 @@ FactoryGirl.define do
     location "any location"
     repeat false
     time "16:00"
+    task
 
     factory :invalid_reminder do
-      date ""
       time ""
     end
   end
 
   factory :category do
     name_category "example name category"
+    reminder
+
+    factory :invalid_category do
+      name_category ""
+    end
   end
 end
