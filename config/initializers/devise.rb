@@ -16,7 +16,7 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
   require "omniauth-facebook"
-    config.omniauth :facebook, "379325155490483", "8308f6068034f5f1d4111f1055e79410", {:scope => 'user_birthday'}
+    config.omniauth :facebook, "382255331857879", "b3f721da285d78b6f107e327961379eb", {:scope => 'user_birthday'}
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
