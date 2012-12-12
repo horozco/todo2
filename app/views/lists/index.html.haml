@@ -1,4 +1,4 @@
-%div.row
+%blockquote
   %div.well1
     %h1 My Lists
     %a.btn.btn-primary{"data-toggle" => "modal", :href => "#myModal", :role => "button"} New List
@@ -10,10 +10,8 @@
           %h5= list.title.capitalize
           .btn-toolbar
             .btn-group
-              %a.btn{:href => "#"}
-                %i.icon-eye-open
-                - @list= list
-              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-remove")),list, method: :delete, data: { confirm: "Are you sure you want to delete this list?"}, :class => "btn btn-default")
+              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-eye-open")),list, :class => "btn")
+              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-remove")),list, method: :delete, data: { confirm: "Are you sure you want to delete this list?"}, :class => "btn")
 %script
   $(function ()  
   { $(".well1").popover({trigger: 'hover'});  

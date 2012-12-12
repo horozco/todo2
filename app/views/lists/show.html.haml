@@ -1,2 +1,17 @@
-%h1 Lists#show
-%p Find me in app/views/lists/show.html.haml
+%h2= @list.title
+= simple_form_for([@list,@list.tasks.build]) do |f|
+  = f.input :name
+  = f.submit
+%h2 Things to do
+- if @list.tasks.incompleted.count == 0
+  Nothing to do! = Chillin' !!
+- @list.tasks.incompleted.each do |task|
+  %p
+    = task.name
+    = task.status=true
+    = link_to "Completed", task.completetask(task)
+%h2 Things I've done
+- @list.tasks.completed.each do |task|
+
+  %p
+    = task.name

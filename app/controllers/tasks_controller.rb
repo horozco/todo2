@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     if @task.update_attributes(params[:task])
-      redirect_to @list, notice: "task was updated" 
+      redirect_to @list, notice: "Task was updated" 
     else
       redirect_to @list, alert: "Task wasn't updated :(" 
     end
