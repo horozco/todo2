@@ -1,6 +1,5 @@
 %h1 My List
-= button_tag(:type => 'button') do
-  - content_tag(:strong, 'Ask me!')
+%a.btn.btn-primary{"data-toggle" => "modal", :href => "#myModal", :role => "button"} New List
 %div.span5
   - @user.lists.each do |list|  
     %div.well1{"data-content" => "#{list.description}", "data-original-title" => "#{list.title}", "data-placement" => "right", :href => "#", :rel => "popover"}
@@ -20,3 +19,13 @@
   $(function ()  
   { $(".well1").popover({trigger: 'hover'});  
   });
+#myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel New List
+  .modal-body
+    = simple_form_for(@list) do |f|
+      - f.input :title
+      .modal-footer
+        %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+        %button.btn.btn-primary Save changes

@@ -6,6 +6,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(params[:list])
+    @list.user_id=current_user.id
     if @list.save
       redirect_to @list, notice: "List was created" 
     else
