@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   validates_presence_of :full_name
   has_many :lists
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    puts "*"*100
-    p auth
+    #puts "*"*100
+    #p auth
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
       user = User.create(full_name:auth.extra.raw_info.name,
