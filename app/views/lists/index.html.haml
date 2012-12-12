@@ -1,0 +1,10 @@
+%h1 My List
+- @user.lists.each do |list|
+  %div.well
+    %div.row
+      %div#lista      
+        %h3.listdiv{"data-content" => "#{list.description}", "data-original-title" => "#{list.title}", "data-placement" => "right", :href => "#", :rel => "popover"}= list.title.capitalize
+%script
+  $(function ()  
+  { $(".listdiv").popover({trigger: 'hover'});  
+  });

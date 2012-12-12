@@ -1,6 +1,5 @@
 class ListsController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :authenticate_same_user
+
   def new
     @list = List.new
   end
@@ -42,6 +41,7 @@ class ListsController < ApplicationController
   end
 
   def index
+    @user= current_user
     @lists = List.all
   end
 end

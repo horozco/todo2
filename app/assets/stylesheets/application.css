@@ -14,3 +14,9 @@
 body {
 	padding-top: 50px;
 }
+#lista{
+	width: auto;
+	display: inline-block;
+	padding-left: 10px;
+	margin-right: 20px;
+}
