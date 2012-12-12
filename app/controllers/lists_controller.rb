@@ -2,13 +2,16 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
     @list = List.new(params[:list])
     @list.user_id=current_user.id
     if @list.save
-      redirect_to @list, notice: "List was created" 
+      redirect_to lists_path, notice: "List was created" 
     else
       flash[:alert] = "List wasn't created :("
       render action: "new"
