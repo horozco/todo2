@@ -11,16 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212215430) do
+ActiveRecord::Schema.define(:version => 20121212230605) do
 
   create_table "categories", :force => true do |t|
     t.string   "name_category"
-    t.integer  "task_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
-
-  add_index "categories", ["task_id"], :name => "index_categories_on_task_id"
 
   create_table "lists", :force => true do |t|
     t.string   "title"
@@ -46,12 +43,14 @@ ActiveRecord::Schema.define(:version => 20121212215430) do
 
   create_table "tasks", :force => true do |t|
     t.string   "name"
-    t.boolean  "status",     :default => false
+    t.boolean  "status",      :default => false
     t.integer  "list_id"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "category_id"
   end
 
+  add_index "tasks", ["category_id"], :name => "index_tasks_on_category_id"
   add_index "tasks", ["list_id"], :name => "index_tasks_on_list_id"
 
   create_table "users", :force => true do |t|
