@@ -8,10 +8,9 @@
 - @list.tasks.incompleted.each do |task|
   %p
     = task.name
-    = task.status=true
-    = link_to "Completed", task.completetask(task)
+    = link_to "Completed", complete_task_path(@list.id,task)
 %h2 Things I've done
 - @list.tasks.completed.each do |task|
-
   %p
     = task.name
+    = link_to "Not Completed", complete_task_path(@list.id,task)
