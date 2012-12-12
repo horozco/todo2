@@ -14,7 +14,7 @@ class ListsController < ApplicationController
       redirect_to lists_path, notice: "List was created" 
     else
       flash[:alert] = "List wasn't created :("
-      render action: "new"
+      render action: "index"
     end
   end
 
