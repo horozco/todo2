@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/koombea/todo2/config/environment.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/koombea/todo2/config/application.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/application.rb": [
         1,
         null,
         1,
@@ -73,7 +73,7 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/config/boot.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/boot.rb": [
         1,
         null,
         null,
@@ -81,7 +81,7 @@
         null,
         1
       ],
-      "/Users/koombea/todo2/config/environments/test.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/environments/test.rb": [
         1,
         null,
         null,
@@ -120,7 +120,7 @@
         1,
         null
       ],
-      "/Users/koombea/todo2/config/initializers/backtrace_silencers.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -129,7 +129,7 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/config/initializers/devise.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -350,23 +350,6 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/koombea/todo2/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -383,14 +366,31 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/config/initializers/mime_types.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/initializers/inflections.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/koombea/todo2/config/initializers/secret_token.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/initializers/mime_types.rb": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/koombea/Documents/dev/todo2/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -399,7 +399,7 @@
         null,
         1
       ],
-      "/Users/koombea/todo2/config/initializers/session_store.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -409,7 +409,7 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/config/initializers/wrap_parameters.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -425,7 +425,7 @@
         1,
         null
       ],
-      "/Users/koombea/todo2/config/routes.rb": [
+      "/Users/koombea/Documents/dev/todo2/config/routes.rb": [
         1,
         null,
         1,
@@ -437,7 +437,7 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/app/models/user.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/models/user.rb": [
         1,
         null,
         null,
@@ -446,7 +446,7 @@
         null,
         null,
         1,
-        null,
+        1,
         1,
         1,
         0,
@@ -463,65 +463,38 @@
         null,
         0,
         null,
-        1,
-<<<<<<< HEAD
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        null,
-        1,
-=======
->>>>>>> Added X button to the notice and alert
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
         null
       ],
-      "/Users/koombea/todo2/app/controllers/application_controller.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/koombea/todo2/app/helpers/application_helper.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/koombea/todo2/app/helpers/categories_helper.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/helpers/categories_helper.rb": [
         1,
         null
       ],
-      "/Users/koombea/todo2/app/helpers/home_helper.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "/Users/koombea/todo2/app/helpers/lists_helper.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/helpers/lists_helper.rb": [
         1,
         null
       ],
-      "/Users/koombea/todo2/app/helpers/reminders_helper.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/helpers/reminders_helper.rb": [
         1,
         null
       ],
-      "/Users/koombea/todo2/app/helpers/tasks_helper.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/helpers/tasks_helper.rb": [
         1,
         null
       ],
-      "/Users/koombea/todo2/app/controllers/categories_controller.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/controllers/categories_controller.rb": [
         1,
         1,
         null,
@@ -533,18 +506,20 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/app/models/category.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/models/category.rb": [
+        1,
+        1,
         1,
         1,
         null
       ],
-      "/Users/koombea/todo2/app/controllers/home_controller.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/controllers/home_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/koombea/todo2/app/controllers/lists_controller.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/controllers/lists_controller.rb": [
         1,
         1,
         null,
@@ -565,7 +540,7 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/app/models/list.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/models/list.rb": [
         1,
         1,
         1,
@@ -573,25 +548,7 @@
         1,
         null
       ],
-      "/Users/koombea/todo2/app/controllers/reminders_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/koombea/todo2/app/models/reminder.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/koombea/todo2/app/controllers/tasks_controller.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/controllers/reminders_controller.rb": [
         1,
         1,
         null,
@@ -603,7 +560,25 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/app/models/task.rb": [
+      "/Users/koombea/Documents/dev/todo2/app/models/reminder.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/koombea/Documents/dev/todo2/app/controllers/tasks_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/koombea/Documents/dev/todo2/app/models/task.rb": [
         1,
         1,
         1,
@@ -612,11 +587,7 @@
         1,
         null
       ],
-<<<<<<< HEAD
       "/Users/koombea/Documents/dev/todo2/app/controllers/users/omniauth_callbacks_controller.rb": [
-=======
-      "/Users/koombea/todo2/app/controllers/users/omniauth_callbacks_controller.rb": [
->>>>>>> Added X button to the notice and alert
         1,
         1,
         null,
@@ -632,11 +603,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
       "/Users/koombea/Documents/dev/todo2/spec/factories.rb": [
-=======
-      "/Users/koombea/todo2/spec/factories.rb": [
->>>>>>> Added X button to the notice and alert
         1,
         null,
         1,
@@ -687,7 +654,7 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/spec/support/controller_macros.rb": [
+      "/Users/koombea/Documents/dev/todo2/spec/support/controller_macros.rb": [
         1,
         0,
         0,
@@ -696,16 +663,47 @@
         null,
         null
       ],
-      "/Users/koombea/todo2/spec/support/devise.rb": [
+      "/Users/koombea/Documents/dev/todo2/spec/support/devise.rb": [
         1,
         1,
+        null
+      ],
+      "/Users/koombea/Documents/dev/todo2/spec/models/list_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/koombea/Documents/dev/todo2/spec/models/reminder_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        null
+      ],
+      "/Users/koombea/Documents/dev/todo2/spec/models/task_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/koombea/Documents/dev/todo2/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1355264122
-=======
-    "timestamp": 1355264142
->>>>>>> Added X button to the notice and alert
+    "timestamp": 1355322524
   }
 }
