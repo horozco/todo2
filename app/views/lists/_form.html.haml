@@ -1,0 +1,13 @@
+= simple_form_for(list) do |f|
+  - if list.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(list.errors.count, "error")
+        prohibited this post from being saved:
+      %ul
+        - list.errors.full_messages.each do |msg|
+          %li= msg
+  = f.input :title
+  = f.input :description , :input_html => {:rows => 8}
+  .form-actions
+    = f.button :submit

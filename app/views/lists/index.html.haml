@@ -1,6 +1,8 @@
-%h1 My List
-%a.btn.btn-primary{"data-toggle" => "modal", :href => "#myModal", :role => "button"} New List
-%div.span5
+%div.row
+  %div.well1
+    %h1 My Lists
+    %a.btn.btn-primary{"data-toggle" => "modal", :href => "#myModal", :role => "button"} New List
+%div.span6
   - @user.lists.each do |list|  
     %div.well1{"data-content" => "#{list.description}", "data-original-title" => "#{list.title}", "data-placement" => "right", :href => "#", :rel => "popover"}
       %div#lista      
@@ -10,22 +12,16 @@
             .btn-group
               %a.btn{:href => "#"}
                 %i.icon-eye-open
-              %a.btn{:href => "#"}
-                %i.icon-edit
-              = button_tag(:type => 'button', :class=>"btn") do
-                - content_tag(:strong, 'Ask me!')
-                = link_to content_tag(:i, nil, :class => "icon-remove") + "", list, method: :delete, data: { confirm: "Are you sure you want to delete this post?"}
+                - @list= list
+              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-remove")),list, method: :delete, data: { confirm: "Are you sure you want to delete this list?"}, :class => "btn btn-default")
 %script
   $(function ()  
   { $(".well1").popover({trigger: 'hover'});  
   });
+
 #myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-header
     %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
     %h3#myModalLabel New List
   .modal-body
-    = simple_form_for(@list) do |f|
-      - f.input :title
-      .modal-footer
-        %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
-        %button.btn.btn-primary Save changes
+    = render partial: "form", locals: {:list => List.new}
