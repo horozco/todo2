@@ -30,6 +30,7 @@ describe TasksController do
   it "should allow to update a task to a given list and store it if valid. Should show the list page with a flash notice message" do
     existing_task = create(:task)
     put :update, {
+      list_id: @existing_list.id,
       id: existing_task.id,
       task: {name: "name changed"}
     }
@@ -41,7 +42,8 @@ describe TasksController do
   it "shouldn't allow to update an invalid task to a given list. Should show the list page with a flash error message" do
     existing_task = create(:task)
     put :update, {
-      id: existing_task,
+      list_id: @existing_list.id,
+      id: existing_task.id,
       task: {name: ""}
     }
     existing_task.reload.name.should_not eql("")
