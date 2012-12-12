@@ -1,10 +1,22 @@
 %h1 My List
-- @user.lists.each do |list|
-  %div.well
-    %div.row
+= button_tag(:type => 'button') do
+  - content_tag(:strong, 'Ask me!')
+%div.span5
+  - @user.lists.each do |list|  
+    %div.well1{"data-content" => "#{list.description}", "data-original-title" => "#{list.title}", "data-placement" => "right", :href => "#", :rel => "popover"}
       %div#lista      
-        %h3.listdiv{"data-content" => "#{list.description}", "data-original-title" => "#{list.title}", "data-placement" => "right", :href => "#", :rel => "popover"}= list.title.capitalize
+        %li 
+          %h5= list.title.capitalize
+          .btn-toolbar
+            .btn-group
+              %a.btn{:href => "#"}
+                %i.icon-eye-open
+              %a.btn{:href => "#"}
+                %i.icon-edit
+              = button_tag(:type => 'button', :class=>"btn") do
+                - content_tag(:strong, 'Ask me!')
+                = link_to content_tag(:i, nil, :class => "icon-remove") + "", list, method: :delete, data: { confirm: "Are you sure you want to delete this post?"}
 %script
   $(function ()  
-  { $(".listdiv").popover({trigger: 'hover'});  
+  { $(".well1").popover({trigger: 'hover'});  
   });
