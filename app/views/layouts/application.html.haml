@@ -12,7 +12,8 @@
           %a.brand{:href=>"#"}ToDo Project
           %ul.nav
             %li= link_to 'Home', root_path
-            %li= link_to 'My Lists', lists_path
+            - if user_signed_in?
+              %li= link_to 'My Lists', lists_path
           %ul.nav.pull-right
             - if user_signed_in?
               %li= link_to "Log Out", destroy_user_session_path,  method: :delete
