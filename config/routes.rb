@@ -7,4 +7,12 @@ Todo2::Application.routes.draw do
   resources :lists do
       resources :tasks
   end
+
+  resources :task do
+    resources :categories
+  end
+
+  resources :task do
+    resources :reminders
+  end
 end

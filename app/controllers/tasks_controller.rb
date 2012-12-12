@@ -28,8 +28,7 @@ class TasksController < ApplicationController
     if @task.update_attributes(params[:task])
       redirect_to @list, notice: "task was updated" 
     else
-      flash[:alert] = "Task wasn't updated :("
-      redirect_to @list
+      redirect_to @list, alert: "Task wasn't updated :(" 
     end
   end
   def find_list

@@ -6,12 +6,11 @@ describe CategoriesController do
   end
 
   it "should allow to create a new category to a given task. Should show the list page with a flash notice message" do
-    expect {
-      post :create, {
-        task_id: @existing_task.id,
-        category: attributes_for(:category)
-      }
-    }.to change {@existing_task.category.count}.by(1)
+    post :create, {
+      task_id: @existing_task.id,
+      category: attributes_for(:category)
+    }
+    @existing_task.category.should_not be_nil
     flash[:notice].should_not be_nil
   end
 
