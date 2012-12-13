@@ -16,10 +16,10 @@
           $( "#datepicker" ).datepicker();
       });
       $(function() {
-          $( "#accordion" ).accordion();
-      });
-     
-
+        $( "#accordion" ).accordion({
+            heightStyle: "content"
+        });
+      });   
   %body
     %div.navbar.navbar-fixed-top      
       %div.navbar-inner
