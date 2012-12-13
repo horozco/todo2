@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-  before_filter :find_task
   def create
     @category = @task.build_category(params[:category])
     if @category.save
@@ -29,9 +28,6 @@ class CategoriesController < ApplicationController
         format.html {redirect_to list_path(@task.list), :notice => "Your category was destroy susscefully :)"}
       end       
     end
-  end
-  def find_task
-    @task = Task.find(params[:task_id])
   end
 end
   
