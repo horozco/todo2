@@ -2,6 +2,7 @@
   %h2
     List To Do  "#{@list.title}"  - 
     %a.btn.btn-link{"data-toggle" => "modal", :href => "#myModal", :role => "button"} Edit List
+    %a.btn.btn-link{"data-toggle" => "modal", :href => "#myModal2", :role => "button"} Create Reminder
     %blockquote
       %h5
         = @list.description
@@ -30,6 +31,8 @@
               = button_to "x", complete_task_path(@list.id,task), :class => "btn btn-danger"
             %div{:style => "float: left; width: auto;"}
               %a.example.btn.btn-link{"data-content" => "#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
+            %div{:style => "float: right; width: auto;"}
+              = button_to "X", list_task_path(@list.id,task), method: :delete, :class => "btn btn-link"
   .span6
     .tasks
       %fieldset
@@ -53,3 +56,9 @@
     %h3#myModalLabel Edit List
   .modal-body
     = render partial: "form", locals: {:list => @list}
+#myModal2.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel Edit List
+  .modal-body
+    = render partial: "reminders/reminder", locals: {:reminder => Reminder.new}

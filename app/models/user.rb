@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :remember_me, :full_name, :birth_date, :provider, :uid, :password
   validates_presence_of :full_name
-  has_many :lists
+  has_many :lists, dependent: :destroy
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     #puts "*"*100
     #p auth

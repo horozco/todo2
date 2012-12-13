@@ -33,4 +33,7 @@ class RemindersController < ApplicationController
   def find_task
     @task = Task.find(params[:task_id])
   end
+  def new
+    @reminder = Reminder.new
+  end
 end
