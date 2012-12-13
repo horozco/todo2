@@ -1,5 +1,4 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name_category, :task_id
+  attr_accessible :name_category
   validates :name_category, uniqueness: true, presence: true
-  validates :task_id, uniqueness: true, presence: true
 end
