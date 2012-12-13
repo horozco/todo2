@@ -12,6 +12,11 @@
         %p
           %div.well1
             %a.example.btn.btn-info{"data-content" => "#{button_to "✔", complete_task_path(@list.id,task)}#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
+          %div.well1{:style => "height: 35px;"}
+            %div{:style => "float: left; width: auto;"}
+              = button_to "✔", complete_task_path(@list.id,task), :class => "btn btn-success"
+            %div{:style => "float: left; width: auto;"}
+              %a.example.btn.btn-danger{"data-content" => "#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
       %legend Things I've done
       - if @list.tasks.completed.count == 0
         You Have no completed tasks
