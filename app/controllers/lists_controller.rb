@@ -43,5 +43,6 @@ class ListsController < ApplicationController
   def index
     @user= current_user
     @lists = List.all
+    @category = Category.new
   end
 end

@@ -6,5 +6,5 @@ class Category < ActiveRecord::Base
     return name_category
   end
 
-  has_many :lists
+  has_many :lists, dependent: :destroy
 end
