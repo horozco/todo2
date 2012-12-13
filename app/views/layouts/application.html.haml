@@ -8,18 +8,17 @@
     %meta{:charset => "utf-8"}/
     %title jQuery UI Datepicker - Default functionality
     %link{:href => "http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css", :rel => "stylesheet"}/
-    %script{:src => "http://code.jquery.com/jquery-1.8.3.js"}
     %script{:src => "http://code.jquery.com/ui/1.9.2/jquery-ui.js"}
     %link{:href => "/resources/demos/style.css", :rel => "stylesheet"}/
     :javascript
       $(function() {
           $( "#datepicker" ).datepicker();
-      });
-      $(function() {
-        $( "#accordion" ).accordion({
-            heightStyle: "content"
+      
+          $( "#accordion" ).accordion({
+              heightStyle: "content"
+          });
         });
-      });   
+    
   %body
     %div.navbar.navbar-fixed-top      
       %div.navbar-inner
