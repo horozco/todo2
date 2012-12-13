@@ -1,7 +1,7 @@
 class RemindersController < ApplicationController
   before_filter :find_task
   def create
-    @reminder = @task.build_reminder(params[:reminder])
+    @reminder = @task.reminders.build(params[:reminder])
     if @reminder.save
       respond_to do |format|
         format.html {redirect_to list_path(@task.list), :notice => "Your reminder was created :)"}  

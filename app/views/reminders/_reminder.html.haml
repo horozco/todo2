@@ -1,5 +1,5 @@
 - @task=Task.first
-= simple_form_for([@task, @task.build_reminder]) do |f|
+= simple_form_for([@task, @task.reminders.build]) do |f|
   - if reminder.errors.any?
     #error_explanation
       %h2
@@ -9,7 +9,9 @@
         - reminder.errors.full_messages.each do |msg|
           %li= msg
   = f.input :date, :input_html => { :size => 20, :id => "datepicker" }
-  = f.time_select :time, :ignore_date => true, :input_html => { :width=> 10 }
+  - current_time = Time.now  
+  - select_datetime(current_time)
+  = f.hidden_field :time, :value => select_datetime(current_time)
 
   .form-actions
     = f.button :submit, class: "btn btn-primary"
