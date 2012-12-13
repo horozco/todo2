@@ -2,6 +2,9 @@
   %h2
     List To Do  "#{@list.title}"  - 
     %a.btn.btn-link{"data-toggle" => "modal", :href => "#myModal", :role => "button"} Edit List
+    %blockquote
+      %h5
+        = @list.description
 .row
   .span6
     %fieldset
@@ -10,26 +13,30 @@
         You Have no pending tasks
       - @list.tasks.incompleted.each do |task|
         %p
-          %div.well1
-            %a.example.btn.btn-info{"data-content" => "#{button_to "✔", complete_task_path(@list.id,task)}#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
           %div.well1{:style => "height: 35px;"}
             %div{:style => "float: left; width: auto;"}
               = button_to "✔", complete_task_path(@list.id,task), :class => "btn btn-success"
             %div{:style => "float: left; width: auto;"}
-              %a.example.btn.btn-danger{"data-content" => "#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
+              %a.example.btn.btn-link{"data-content" => "#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
+            %div{:style => "float: right; width: auto;"}
+              = button_to "X", list_task_path(@list.id,task), method: :delete, :class => "btn btn-link"
       %legend Things I've done
       - if @list.tasks.completed.count == 0
         You Have no completed tasks
       - @list.tasks.completed.each do |task|
         %p
-          %div.well1
-            %a.example.btn.btn-info{"data-content" => "#{button_to "x", complete_task_path(@list.id,task)}#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
+          %div.well1{:style => "height: 35px;"}
+            %div{:style => "float: left; width: auto;"}
+              = button_to "x", complete_task_path(@list.id,task), :class => "btn btn-danger"
+            %div{:style => "float: left; width: auto;"}
+              %a.example.btn.btn-link{"data-content" => "#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
   .span6
-    %fieldset
-      %legend Create Task
-      = simple_form_for([@list,@list.tasks.build]) do |f|
-        = f.input :name
-        = f.submit class: "btn btn-primary"
+    .tasks
+      %fieldset
+        %legend Create Task
+        = simple_form_for([@list,@list.tasks.build]) do |f|
+          = f.input :name
+          = f.submit class: "btn btn-primary"
 
 %script
   $(function ()  
