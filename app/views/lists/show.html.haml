@@ -1,7 +1,7 @@
 .page-header
   %h2
-    List To Do  "#{@list.title}" |
-    %small= link_to "Edit title", edit_list_path
+    List To Do  "#{@list.title}"  - 
+    %a.btn.btn-link{"data-toggle" => "modal", :href => "#myModal", :role => "button"} Edit List
 .row
   .span6
     %fieldset
@@ -24,7 +24,7 @@
       %legend Create Task
       = simple_form_for([@list,@list.tasks.build]) do |f|
         = f.input :name
-        = f.submit
+        = f.submit class: "btn btn-primary"
 
 %script
   $(function ()  
@@ -34,3 +34,10 @@
   trigger: 'click'
   });  
   });
+
+#myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel Edit List
+  .modal-body
+    = render partial: "form", locals: {:list => @list}
