@@ -1,14 +1,21 @@
-%h2= @list.title
+.page-header
+  %h2
+    List To Do  "#{@list.title}" |
+    %small= link_to "Edit title", edit_list_path
+.row
+  .span6
+    %fieldset
+      %legend Things to do
+      - if @list.tasks.incompleted.count == 0
+        You Have no pending tasks
+      - @list.tasks.incompleted.each do |task|
+        %p
+          %div.well1
+            %a.example.btn.btn-danger{"data-content" => "#{button_to "✔", complete_task_path(@list.id,task)}#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
 = simple_form_for([@list,@list.tasks.build]) do |f|
   = f.input :name
   = f.submit
-%h2 Things to do
-- if @list.tasks.incompleted.count == 0
-  You Have no pending tasks
-- @list.tasks.incompleted.each do |task|
-  %p
-    %div.well1
-      %a.example.btn.btn-danger{"data-content" => "#{button_to "✔", complete_task_path(@list.id,task)}#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
+
 %h2 Things I've done
 - @list.tasks.completed.each do |task|
   %p

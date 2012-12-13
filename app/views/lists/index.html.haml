@@ -4,10 +4,10 @@
     %a.btn.btn-primary{"data-toggle" => "modal", :href => "#myModal", :role => "button"} New List
 %div.span6
   - @user.lists.each do |list|  
-    %div.well1{"data-content" => "#{list.description}", "data-original-title" => "#{list.title}", "data-placement" => "right", :href => "#", :rel => "popover"}
+    %div.well1{"data-content" => "#{list.description}", "data-original-title" => "Description", "data-placement" => "right", :href => "#", :rel => "popover"}
       %div#lista      
         %li 
-          %h5= list.title.capitalize
+          %h5= link_to list.title.capitalize, list
           .btn-toolbar
             .btn-group
               = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-eye-open")),list, :class => "btn")
