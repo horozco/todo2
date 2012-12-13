@@ -12,15 +12,19 @@
         %p
           %div.well1
             %a.example.btn.btn-danger{"data-content" => "#{button_to "✔", complete_task_path(@list.id,task)}#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
-= simple_form_for([@list,@list.tasks.build]) do |f|
-  = f.input :name
-  = f.submit
-
-%h2 Things I've done
-- @list.tasks.completed.each do |task|
-  %p
-    %div.well1
-      %a.example.btn.btn-danger{"data-content" => "#{button_to "x", complete_task_path(@list.id,task)}#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
+      %legend Things I've done
+      - if @list.tasks.completed.count == 0
+        You Have no completed tasks
+      - @list.tasks.completed.each do |task|
+        %p
+          %div.well1
+            %a.example.btn.btn-danger{"data-content" => "#{button_to "x", complete_task_path(@list.id,task)}#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
+  .span6
+    %fieldset
+      %legend Create Task
+      = simple_form_for([@list,@list.tasks.build]) do |f|
+        = f.input :name
+        = f.submit
 
 %script
   $(function ()  
@@ -30,4 +34,3 @@
   trigger: 'click'
   });  
   });
-
