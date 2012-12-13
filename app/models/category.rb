@@ -5,4 +5,6 @@ class Category < ActiveRecord::Base
   def get_name
     return name_category
   end
+
+  has_many :lists
 end
