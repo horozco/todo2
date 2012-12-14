@@ -34,7 +34,7 @@
             %div{:style => "float: right; width: auto;"}
               = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),list_task_path(@list.id,task), method: :delete, :class => "btn")
   .span6
-    .tasks
+    .tasks.well
       %fieldset
         %legend Create Task
         = simple_form_for([@list,@list.tasks.build]) do |f|
