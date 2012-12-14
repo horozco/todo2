@@ -8,8 +8,9 @@
         - reminder.errors.full_messages.each do |msg|
           %li= msg
   = select_tag "list[tasks_attributes][0][id]", options_from_collection_for_select(@list.tasks, :id, :name)
-  %h6 Date and Time
-  = fields_for "list[tasks_attributes][0][reminders_attributes][0]", @list.tasks.build.reminders.build do |reminder_fields|
-    = reminder_fields.datetime_select :date_time 
+  %h6 Date and Time  
+  = fields_for "list[tasks_attributes][0][reminders_attributes][0]", @list.tasks.build.reminders.build do |reminder_fields|    
+    %p.well1
+      = reminder_fields.datetime_select :date_time, {:date_separator => ' / '}, :style => "width: 70px;"
   .form-actions
     = f.button :submit, "Create Reminder", class: "btn btn-primary"
