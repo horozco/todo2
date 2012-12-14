@@ -3,5 +3,4 @@ class Reminder < ActiveRecord::Base
   belongs_to :task
   validates_presence_of :date_time
   validates :task_id, uniqueness: true, presence: true
-  
 end

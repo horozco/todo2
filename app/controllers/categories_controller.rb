@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html {redirect_to lists_path, :alert => "Your category couldn't be submitted. :("}
+        format.html {redirect_to lists_path, :alert => "Your category couldn't be submitted :( Try changing the Category Name"}
       end
     end
   end
