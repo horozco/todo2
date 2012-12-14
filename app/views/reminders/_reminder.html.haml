@@ -1,5 +1,4 @@
-- @task=Task.first
-= simple_form_for([@task, @task.reminders.build]) do |f|
+= simple_form_for(@list) do |f|
   - if reminder.errors.any?
     #error_explanation
       %h2
@@ -8,7 +7,9 @@
       %ul
         - reminder.errors.full_messages.each do |msg|
           %li= msg
-  = f.input :date_time,:value=> Time.now, :input_html => {:style=> 'width: 60px'}
-  - p "TIEMPOOOOOOO  #{Time.now}"
+  = select_tag "list[tasks_attributes][0][id]", options_from_collection_for_select(@list.tasks, :id, :name)
+  %h6 Date and Time
+  = fields_for "list[tasks_attributes][0][reminders_attributes][0]", @list.tasks.build.reminders.build do |reminder_fields|
+    = reminder_fields.datetime_select :date_time 
   .form-actions
-    = f.button :submit, class: "btn btn-primary"
+    = f.button :submit, "Create Reminder", class: "btn btn-primary"
