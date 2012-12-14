@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :authenticate_same_user, :only => [:update, :destroy, :edit, :show]
+  
   def new
     @list = List.new
     respond_to do |format|
@@ -46,5 +48,14 @@ class ListsController < ApplicationController
     if @user.categories.size == 0
       flash[:alert] = "You have not created any category. Create an before that create a list."
     end
+  end
+  def authenticate_same_user
+    @list = List.find(params[:id])
+    @category = @list.category
+      if current_user == @category.user
+        true
+      else
+        redirect_to lists_path, :alert => "You are not authorized to edit this list"
+      end
   end
 end
