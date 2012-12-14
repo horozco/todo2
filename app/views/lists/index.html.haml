@@ -1,11 +1,12 @@
 %blockquote
   %div.well1
     %h1 My Lists
+  - if current_user.categories.size != 0
     %a.btn.btn-primary{"data-toggle" => "modal", :href => "#myModal", :role => "button"} New List
 .row
   %div.span6
     %div#accordion
-      - Category.order("name_category").each do |cat|
+      - current_user.categories.order("name_category").each do |cat|
         - if cat.lists.count == 0
           %h3
             = cat.name_category
@@ -17,7 +18,7 @@
           %h3
             = cat.name_category
           %div
-            - @user.lists.each do |list|  
+            - cat.lists.each do |list|  
               - if list.category == cat
                 %div.well1{"data-content" => "#{list.description}", "data-original-title" => "Description", "data-placement" => "right", :href => "#", :rel => "popover"}
                   %div#lista      
@@ -34,7 +35,7 @@
       %fieldset
         %legend Create Category
         = simple_form_for(@category) do |f|
-          = f.input :name_category
+          = f.input :name_category, autofocus: true
           = f.submit class: "btn btn-primary"
 %script
   $(function ()  

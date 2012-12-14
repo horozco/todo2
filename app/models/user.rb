@@ -7,10 +7,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :remember_me, :full_name, :birth_date, :provider, :uid, :password
   validates_presence_of :full_name
-  has_many :lists, dependent: :destroy
+  has_many :categories, dependent: :destroy
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    #puts "*"*100
-    #p auth
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
       user = User.create(full_name:auth.extra.raw_info.name,

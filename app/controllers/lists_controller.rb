@@ -9,7 +9,6 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(params[:list])
-    @list.user_id=current_user.id
     if @list.save
       redirect_to lists_path, notice: "List was created" 
     else
@@ -44,5 +43,8 @@ class ListsController < ApplicationController
     @user= current_user
     @lists = List.all
     @category = Category.new
+    if @user.categories.size == 0
+      flash[:alert] = "You have not created any category. Create an before that create a list."
+    end
   end
 end

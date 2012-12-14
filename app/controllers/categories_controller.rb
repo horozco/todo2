@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
+  before_filter :authenticate_user!
   def create
     @category = Category.new(params[:category])
+    @category.user_id=current_user.id
     if @category.save
       respond_to do |format|
         format.html {redirect_to lists_path, :notice => "Your category was created :)"}  
