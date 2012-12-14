@@ -6,10 +6,7 @@ class List < ActiveRecord::Base
   accepts_nested_attributes_for :tasks
 
   belongs_to :category
-<<<<<<< HEAD
-=======
 
   belongs_to :user
-  
->>>>>>> Fixed Reminders Modal
+
 end
