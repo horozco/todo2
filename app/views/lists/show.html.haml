@@ -20,7 +20,7 @@
             %div{:style => "float: left; width: auto;"}
               %a.example.btn.btn-link{"data-content" => "#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
             %div{:style => "float: right; width: auto;"}
-              = button_to "X", list_task_path(@list.id,task), method: :delete, :class => "btn btn-link"
+              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),list_task_path(@list.id,task), method: :delete, :class => "btn")
       %legend Things I've done
       - if @list.tasks.completed.count == 0
         You Have no completed tasks
@@ -32,7 +32,7 @@
             %div{:style => "float: left; width: auto;"}
               %a.example.btn.btn-link{"data-content" => "#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :href => "#", :rel => "popover"}= task.name
             %div{:style => "float: right; width: auto;"}
-              = button_to "X", list_task_path(@list.id,task), method: :delete, :class => "btn btn-link"
+              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),list_task_path(@list.id,task), method: :delete, :class => "btn")
   .span6
     .tasks
       %fieldset

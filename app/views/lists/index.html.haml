@@ -12,7 +12,7 @@
           %div
             This category do not have any list.
             %div{:style => "float: right; width: auto;"}
-              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),category_path(cat), method: :delete, data: { confirm: "Are you sure you want to delete this list?"}, :class => "btn")
+              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),category_path(cat), method: :delete, data: { confirm: "Are you sure you want to delete this Category?"}, :class => "btn")
         - else
           %h3
             = cat.name_category
@@ -28,7 +28,7 @@
                           = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-eye-open")),list, :class => "btn")
                           = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-remove")),list, method: :delete, data: { confirm: "Are you sure you want to delete this list?"}, :class => "btn")
             %div{:style => "float: right; width: auto;"}
-              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),category_path(cat), method: :delete, data: { confirm: "Are you sure you want to delete this list?"}, :class => "btn")
+              = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),category_path(cat), method: :delete, data: { confirm: "Are you sure you want to delete this Category?"}, :class => "btn")
   %div.span6
     .div.well
       %fieldset
