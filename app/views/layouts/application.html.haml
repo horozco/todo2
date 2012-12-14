@@ -11,12 +11,30 @@
     %script{:src => "http://code.jquery.com/ui/1.9.2/jquery-ui.js"}
     %link{:href => "/resources/demos/style.css", :rel => "stylesheet"}
     :javascript
+      function update()
+      { 
+         $.getJSON('/task/reminders', function(data) 
+         {
+
+            $('#time_update').html(data);
+         });
+      }
       $(function() {
+<<<<<<< HEAD
           $( "#accordion" ).accordion({
               heightStyle: "content"
           });
+=======
+        window.setInterval('update()', 3*1000);
+        $( "#accordion" ).accordion({
+            heightStyle: "content"
+        });
+        $('#datetimepicker').datetimepicker();
+>>>>>>> Final Arrangements
       });
   %body
+    #time_update
+
     %div.navbar.navbar-fixed-top      
       %div.navbar-inner
         %div.container
