@@ -18,7 +18,10 @@
             %div{:style => "float: left; width: auto;"}
               = button_to "✔", complete_task_path(@list.id,task), :class => "btn btn-success"
             %div{:style => "float: left; width: auto;"}
-              %a.example.btn.btn-link{"data-content" => "#{task.reminders.all}", "data-original-title" => "Options", :rel => "popover"}= task.name
+              - if task.reminders.count == 0
+                %a.example.btn.btn-link{"data-content" => "No reminders", "data-original-title" => "Options", :rel => "popover"}= task.name
+              - else
+                %a.example.btn.btn-link{"data-content" => "#{task.reminders.first.date_time.strftime("Date: (%d %b %y) Time: (%H-%M)")}" + "#{link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),task_reminder_path(task, task.reminders.first), method: :delete, :class => "btn")}", "data-original-title" => "Reminder", :rel => "popover"}= task.name
             %div{:style => "float: right; width: auto;"}
               = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),list_task_path(@list.id,task), method: :delete, :class => "btn")
       %legend Things I've done
@@ -30,7 +33,11 @@
             %div{:style => "float: left; width: auto;"}
               = button_to "x", complete_task_path(@list.id,task), :class => "btn btn-danger"
             %div{:style => "float: left; width: auto;"}
-              %a.example.btn.btn-link{"data-content" => "#{button_to "Delete", list_task_path(@list.id,task), method: :delete}", "data-original-title" => "Options", :rel => "popover"}= task.name
+              - if task.reminders.count == 0
+                %a.example.btn.btn-link{"data-content" => "No reminders", "data-original-title" => "Options", :rel => "popover"}= task.name
+              - else
+                %a.example.btn.btn-link{"data-content" => "#{task.reminders.first.date_time.strftime("Date: (%d %b %y) Time: (%H-%M)")}" + "#{link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),task_reminder_path(task, task.reminders.first), method: :delete, :class => "btn")}", "data-original-title" => "Reminder", :rel => "popover"}= task.name
+
             %div{:style => "float: right; width: auto;"}
               = link_to(content_tag(:span, content_tag(:i, nil, :class => "icon-trash")),list_task_path(@list.id,task), method: :delete, :class => "btn")
   .span6
