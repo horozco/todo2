@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213152343) do
+ActiveRecord::Schema.define(:version => 20121214151845) do
 
   create_table "categories", :force => true do |t|
     t.string   "name_category"
@@ -33,12 +33,11 @@ ActiveRecord::Schema.define(:version => 20121213152343) do
 
   create_table "reminders", :force => true do |t|
     t.integer  "task_id"
-    t.string   "date"
-    t.string   "time"
     t.string   "repeat",     :default => "0000000"
     t.string   "location"
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.datetime "date_time"
   end
 
   add_index "reminders", ["task_id"], :name => "index_reminders_on_task_id"
