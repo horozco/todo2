@@ -19,7 +19,8 @@ class CategoriesController < ApplicationController
     if @category.update_attributes(params[:category])
       redirect_to lists_path, notice: "category was updated" 
     else
-      redirect_to lists_path, alert: "Category wasn't updated :(" 
+      redirect_to lists_path
+      flash[:alert] = "Category wasn't updated :(" 
     end
   end
 

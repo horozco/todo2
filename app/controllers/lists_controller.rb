@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :authenticate_same_user, :only => [:update, :destroy, :edit, :show]
+  before_filter :authenticate_same_user, :only => [:update, :destroy, :show]
   
   def new
     @list = List.new
@@ -14,8 +14,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to lists_path, notice: "List was created" 
     else
-      flash[:alert] = "List wasn't created :("
-      render action: "index"
+      redirect_to lists_path, alert: "List wasn't created :(" 
     end
   end
 
@@ -49,6 +48,7 @@ class ListsController < ApplicationController
       flash[:alert] = "You have not created any category. Create an before that create a list."
     end
   end
+
   def authenticate_same_user
     @list = List.find(params[:id])
     @category = @list.category

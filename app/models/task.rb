@@ -5,10 +5,5 @@ class Task < ActiveRecord::Base
   has_many :reminders, dependent: :destroy
   scope :completed, where(:status => true)
   scope :incompleted, where(:status => false)
-
   accepts_nested_attributes_for :reminders
-
-  def get_name
-    return name
-  end
 end

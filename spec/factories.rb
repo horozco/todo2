@@ -1,15 +1,24 @@
 FactoryGirl.define do
   
   factory :user do
-    sequence(:full_name) {|n| "Alguien_ #{n}"}
-    sequence(:email) {|n| "a_a#{n}@b.com"}
+    sequence(:full_name) {|n| "Alguien_#{n}"}
+    sequence(:email) {|n| "a_a#{n}@gmailsaasasqwweaeeda.com"}
     password "password"
+  end
+
+  factory :category do
+    name_category "example category name"
+    user
+
+    factory :invalid_category do
+      name_category ""
+    end
   end
 
   factory :list do
     title "example list title"
     description "description example"
-    user
+    category
 
     factory :invalid_list do
       title ""
@@ -35,15 +44,6 @@ FactoryGirl.define do
 
     factory :invalid_reminder do
       time ""
-    end
-  end
-
-  factory :category do
-    name_category "example name category"
-    task
-
-    factory :invalid_category do
-      name_category ""
     end
   end
 end
